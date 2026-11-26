@@ -1,0 +1,35 @@
+# 构建上下文是项目根，这里排除掉一切与运行无关的东西。
+# 少了这个文件，509M 的 Windows .venv 会被整个塞进镜像层。
+
+# 虚拟环境与缓存（Linux 容器里不能用 Windows 的 .venv）
+**/.venv
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.pytest_cache
+**/.mypy_cache
+
+# 开发脚本、测试素材、临时产物
+backend/dev
+backend/md文件转换
+backend/uploads
+backend/test_chroma_db
+**/resp*.json
+_backup
+dist
+
+# 本地运行数据：不进镜像（由 volume 挂载）
+backend/data/app.db
+backend/data/sessions_files
+backend/data/rag/chroma
+
+# 密钥绝不进镜像
+**/.env
+!backend/.env.example
+
+# 编辑器与项目元数据
+.idea
+.vscode
+.git
+.workbuddy
+*.log

@@ -1,0 +1,194 @@
+---
+title: "PyCharm操作基础指南_pycharm使用指南-CSDN博客"
+source: "https://blog.csdn.net/weixin_71288092/article/details/146543452?ops_request_misc=&request_id=&biz_id=102&utm_term=%E4%BD%BF%E7%94%A8pycharm%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-146543452.142^v102^pc_search_result_base7&spm=1018.2226.3001.4187"
+author:
+  - "[[豆芽819]]"
+published: 2025-03-26
+created: 2026-10-10
+description: "文章浏览阅读2k次，点赞38次，收藏16次。本文涵盖安装配置、项目开发、调试测试、版本控制等核心功能，助你高效使用这一强大的 Python IDE_pycharm使用指南"
+tags:
+  - "clippings"
+---
+#### 一、安装与配置
+
+##### 1\. 版本选择
+
+- **专业版** ：支持 Web 开发（Django/Flask）、数据库工具、科学计算等（需付费）。
+- **社区版** ：免费，适合纯 Python 开发。
+
+##### 2\. 安装步骤
+
+- 访问 [JetBrains 官网](https://www.jetbrains.com/pycharm/ "JetBrains 官网") 下载对应版本。
+- 安装时勾选 **Add launchers dir to PATH** （方便命令行启动）。
+
+##### 3\. 首次配置
+
+- **选择主题** ： `File → Settings → Appearance & Behavior → Theme` 。
+- **配置 Python 解释器** ：  
+	`File → Settings → Project: <项目名> → Python Interpreter` → 点击 `⚙️` → `Add` → 选择系统 Python 或虚拟环境。
+
+---
+
+#### 二、项目创建与管理
+
+##### 1\. 新建项目
+
+- `File → New Project` → 选择路径 → 选择解释器 → 创建。
+- **项目类型** ：纯 Python、Django、Flask 等。
+
+##### 2\. 导入现有项目
+
+- `File → Open` → 选择项目目录 → 确认导入。
+
+##### 3\. 虚拟环境管理
+
+- **创建虚拟环境** ：  
+	`File → Settings → Project: <项目名> → Python Interpreter` → `⚙️` → `Add` → 选择 `Virtualenv Environment` 。
+- **安装依赖** ：在解释器界面点击 `+` → 搜索包 → 安装。
+
+---
+
+#### 三、代码编辑与导航
+
+##### 1\. 快捷键速查
+
+| **功能** | **快捷键 (Windows/Linux)** | **快捷键 (Mac)** |
+| --- | --- | --- |
+| 运行当前文件 | `Shift + F10` | `Control + R` |
+| 调试当前文件 | `Shift + F9` | `Control + D` |
+| 代码补全 | `Ctrl + Space` | `Control + Space` |
+| 跳转到定义 | `Ctrl + B` | `Command + B` |
+| 重命名变量/函数 | `Shift + F6` | `Shift + F6` |
+| 格式化代码 | `Ctrl + Alt + L` | `Command + Option + L` |
+
+##### 2\. 代码补全与模板
+
+- **智能补全** ：输入部分代码后按 `Tab` 或 `Enter` 。
+- **代码模板** ：输入 `main` → 按 `Tab` 生成 `if __name__ == "__main__":`。
+
+##### 3\. 代码导航
+
+- **查找文件** ： `Ctrl + Shift + N` （Mac： `Command + Shift + O` ）。
+- **查找符号** ： `Ctrl + Alt + Shift + N` （如类、方法名）。
+
+---
+
+#### 四、调试与运行
+
+##### 1\. 设置断点
+
+- 点击代码行号左侧区域添加断点（红点）。
+
+##### 2\. 启动调试
+
+- 点击右上角 `🐞` 或按 `Shift + F9` 。
+- **调试工具栏** ：
+	- `Step Over (F8)` ：逐行执行。
+		- `Step Into (F7)` ：进入函数内部。
+		- `Resume (F9)` ：继续执行到下一个断点。
+
+##### 3\. 查看变量与表达式
+
+- **变量窗口** ：调试时自动显示当前作用域变量值。
+- **添加监视** ：右键变量 → `Add to Watches` 。
+
+---
+
+#### 五、版本控制（Git）
+
+##### 1\. 初始化仓库
+
+- `VCS → Enable Version Control Integration` → 选择 Git。
+
+##### 2\. 提交代码
+
+- `Ctrl + K` （Mac： `Command + K` ）→ 输入提交信息 → 提交。
+
+##### 3\. 分支管理
+
+- **创建分支** ：右下角 `Git: master` → `New Branch` 。
+- **合并分支** ： `VCS → Git → Merge Changes` 。
+
+##### 4\. 解决冲突
+
+- 冲突文件会高亮显示 → 手动选择保留内容 → 标记为已解决。
+
+---
+
+#### 六、数据库工具
+
+##### 1\. 连接数据库
+
+- **操作步骤** ：  
+	`View → Tool Windows → Database` → `+` → 选择数据库类型 → 填写连接信息。
+
+##### 2\. 执行 SQL 查询
+
+- 在 Database 窗口右键表 → `Open Console` → 编写 SQL → 点击执行按钮。
+
+---
+
+#### 七、测试框架集成
+
+##### 1\. 运行测试
+
+- **单元测试** ：右键测试文件或方法 → `Run 'pytest in <文件名>'` 。
+- **覆盖率报告** ： `Run → Run with Coverage` 。
+
+##### 2\. 调试测试
+
+- 在测试方法中设置断点 → 右键 → `Debug 'pytest in <文件名>'` 。
+
+---
+
+#### 八、插件扩展
+
+##### 1\. 安装插件
+
+- `File → Settings → Plugins` → 搜索插件（如 `CodeGlance` 、 `Rainbow CSV` ）→ 安装。
+
+##### 2\. 推荐插件
+
+- **Key Promoter X** ：提示快捷键操作。
+- **CSV Plugin** ：高亮显示 CSV 文件。
+- **Jupyter Notebook** ：在 PyCharm 中编辑运行 Notebook。
+
+---
+
+#### 九、性能优化
+
+##### 1\. 禁用不必要的插件
+
+- `File → Settings → Plugins` → 关闭不常用插件。
+
+##### 2\. 增加内存分配
+
+- 修改 `pycharm.vmoptions` 文件（路径： `PyCharm → Help → Edit Custom VM Options` ）：
+
+---
+
+#### 十、常见问题解决
+
+##### 1\. 无法找到解释器
+
+- **解决方法** ： `File → Settings → Project: <项目名> → Python Interpreter` → 重新配置路径。
+
+##### 2\. 代码补全失效
+
+- **解决方法** ： `File → Invalidate Caches / Restart` → 选择 `Invalidate and Restart` 。
+
+##### 3\. Git 提交失败
+
+- **检查网络** ：确认 Git 仓库地址可访问。
+- **配置用户名** ：
+	```
+	python运行
+	```
+
+参考 [Getting started | PyCharm Documentation](https://www.jetbrains.com/help/pycharm/getting-started.html "Getting started | PyCharm Documentation")
+
+---
+
+#### 总结
+
+PyCharm 通过集成开发、调试、测试、版本控制等工具，极大提升了 Python 开发效率。掌握上述核心操作后，可快速适应复杂项目开发需求。建议结合官方文档和实际项目实践，逐步探索更多高级功能（如远程开发、Docker 集成）。
